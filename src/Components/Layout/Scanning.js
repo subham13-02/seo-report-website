@@ -13,7 +13,7 @@ const Scanning=(props)=>{
 
    // setUrl(updatedUrl);
     const userName=process.env.REACT_APP_API_USERNAME;
-    const password=process.env.REACT_APP_API_KEY;
+    const pass=process.env.REACT_APP_API_KEY;
     const fetchData=async () => {
       const post_array = [{
         url: updatedUrl,
@@ -26,7 +26,7 @@ const Scanning=(props)=>{
           url: "https://api.dataforseo.com/v3/on_page/instant_pages",
           auth: {
             username: userName,
-            password: password
+            password: pass,
           },
           data: post_array,
           headers: {

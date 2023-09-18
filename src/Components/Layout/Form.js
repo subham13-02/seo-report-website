@@ -12,7 +12,7 @@ const Form = () => {
     const [screenshotUrl, setScreenshotUrl] = useState('');
     
     const userName=process.env.REACT_APP_API_USERNAME;
-    const password=process.env.REACT_APP_API_KEY;
+    const pass=process.env.REACT_APP_API_KEY;
     
     const fetchScreenshot = async (completeUrl) => {
 
@@ -27,7 +27,7 @@ const Form = () => {
           url:'https://api.dataforseo.com/v3/on_page/page_screenshot',
           auth: {
             username: userName,
-            password: password
+            password: pass,
           },
           data: post_object,
         })
