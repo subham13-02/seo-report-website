@@ -9,6 +9,9 @@ const Scanning=(props)=>{
     // const [isloading, setIsloading] = useState(false);
   const {updatedUrl,screenshotUrl}=props;
     const [items,setItems]=useState([]);
+    //const [url,setUrl]=useState(null);
+
+   // setUrl(updatedUrl);
     const userName=process.env.REACT_APP_API_USERNAME;
     const password=process.env.REACT_APP_API_KEY;
     const fetchData=async () => {
@@ -33,9 +36,10 @@ const Scanning=(props)=>{
         });
         if (response.status === 200) {
             const resultArray = response.data.tasks[0].result;
-            const items = resultArray[0].items;
+            let data = resultArray[0].items;
+            
+            setItems(data);
             console.log(items);
-            setItems(items);
             document.querySelector(".scanning-container").style.display="none";
 
         } else {
@@ -53,11 +57,14 @@ const Scanning=(props)=>{
         }
       }
     }
-  useEffect(
-    ()=>{
-      setTimeout(() => {
+
+    useEffect(()=>{
+        setTimeout(() => {
         fetchData();
-      }, 5000 );},[]);
+      }, 5000 )
+    });
+    
+      
   
 
   return (
