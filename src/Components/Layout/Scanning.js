@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Scanning.css';
 import Display from "./Display"; 
@@ -53,9 +53,12 @@ const Scanning=(props)=>{
         }
       }
     }
-  setTimeout(() => {
-     fetchData();
-  }, 5000 );
+  useEffect(
+    ()=>{
+      setTimeout(() => {
+        fetchData();
+      }, 5000 );},[]);
+  
 
   return (
     <div className="seoData">
