@@ -1,0 +1,21 @@
+.checkCard{
+    width: 350px;
+    border: 1px solid grey;
+    font-size: 12px;
+    border-radius: 5px;
+    color:white;
+    display: flex;
+}
+.icon{
+    font-size: 1.5rem;
+    padding:1.5rem;
+}
+.checkCard p{
+    color:rgb(173, 173, 173)
+}
+.red{
+    color: rgb(197, 0, 0);
+}
+.green{
+    color:rgb(0, 99, 0)
+}
